@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ممر MAMAR — منصة كازية السلام | منفذ السلامة</title>
+<meta name="description" content="منصة تشغيل الوقود للممر الحدودي: حجز باللوحة، توريد متوقع، ومحفظة أساطيل.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230d141d'/><path d='M12 44h40M20 44V24l12-8 12 8v20M28 44V32h8v12' stroke='%23f6a623' stroke-width='4' fill='none' stroke-linecap='round'/></svg>">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============ الترويسة ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M6 36h36M12 36V19l12-8 12 8v17M20 36V26h8v10" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="14" r="2.6" fill="currentColor"/></svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-title">ممر <span>MAMAR</span></div>
+        <div class="brand-sub">منصة كازية السلام · منفذ السلامة — باب السلامة / أعزاز</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="live-pill"><span class="dot"></span> مباشر · <span id="clock">--:--:--</span></div>
+      <label class="switch" title="محاكاة وصول المركبات وتقدّم المسارات">
+        <input type="checkbox" id="autoToggle" checked><span></span> محاكاة حيّة
+      </label>
+      <button class="btn btn-ghost btn-sm" id="resetBtn" title="إعادة بيانات العرض">إعادة الضبط</button>
+    </div>
+  </header>
+
+  <!-- ============ التنقل ============ -->
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="pitch" role="tab"><span class="tab-ico">✦</span> الفكرة</button>
+    <button class="tab" data-tab="driver" role="tab"><span class="tab-ico">🚚</span> السائق / الأسطول</button>
+    <button class="tab" data-tab="operator" role="tab"><span class="tab-ico">⛽</span> لوحة المشغّل</button>
+    <button class="tab" data-tab="admin" role="tab"><span class="tab-ico">▤</span> الإدارة والجدوى</button>
+    <div class="tabs-spacer"></div>
+    <div class="tab-note">نموذج تشغيلي تفاعلي · بيانات توضيحية</div>
+  </nav>
+
+  <main class="content">
+
+    <!-- ============================================================ الفكرة -->
+    <section class="view active" id="view-pitch">
+
+      <div class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">أقوى فكرة · 2026</div>
+            <h1>لا تَبْنِ كازية رقمية…<br>ابنِ <em>طبقة الوقود</em> للممر الحدودي.</h1>
+            <p class="lead">«ممر» تحجز الوقود باسم <b>لوحة الشاحنة</b> قبل وصولها، تزامن الحجز مع موعد العبور الجمركي، وتترجم الطلب إلى أمر توريد مُتتبَّع — ثم تبيع النظام نفسه لكل المنافذ. <b>كازية السلام</b> هي العقدة الأولى.</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary" data-go="driver">جرّب حجز شاحنة <span>←</span></button>
+              <button class="btn btn-outline" data-go="operator">شاهد لوحة التشغيل</button>
+            </div>
+            <div class="hero-tags">
+              <span>حجز باللوحة</span><span>حصة مضمونة</span><span>محفظة أساطيل</span>
+              <span>تتبّع توريد 72 ساعة</span><span>«ممر OS» لشبكة منافذ</span>
+            </div>
+          </div>
+          <div class="hero-side">
+            <div class="slogan-card">
+              <div class="slogan-q">«</div>
+              <div class="slogan-txt">الوقود يصل قبل الشاحنة…<br><b>والطابور يصفر.</b></div>
+              <div class="slogan-line"></div>
+              <div class="slogan-foot">من ٤–٥ ساعات انتظار إلى أقل من ٢٠ دقيقة</div>
+            </div>
+            <div class="mini-kpis" id="pulseKpis"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head"><h2>لماذا الآن؟</h2><span>الفرصة مبنية على أرقام منشورة لا على تخمين</span></div>
+      <div class="evidence-grid">
+        <div class="ev-card">
+          <div class="ev-num">1.23<small>مليون</small></div>
+          <div class="ev-label">مسافر عبر منفذ السلامة في ٨ أشهر من 2026</div>
+          <a class="ev-src" href="https://sana.sy/governorates/aleppo/2574281/" target="_blank" rel="noopener">سانا · أيلول 2026 ↗</a>
+        </div>
+        <div class="ev-card">
+          <div class="ev-num">46,480<small>شاحنة</small></div>
+          <div class="ev-label">≈ 191 شاحنة يومياً، وأكثر من 1.07 مليون طن بضائع</div>
+          <a class="ev-src" href="https://sana.sy/governorates/aleppo/2574281/" target="_blank" rel="noopener">سانا · أيلول 2026 ↗</a>
+        </div>
+        <div class="ev-card warn">
+          <div class="ev-num">4–5<small>ساعات</small></div>
+          <div class="ev-label">انتظار سائقي الشاحنات أمام المحطات في أزمة تشرين الأول</div>
+          <a class="ev-src" href="https://www.aljazeera.net/news/2026/10/26/%D8%B7%D9%88%D8%A7%D8%A8%D9%8A%D8%B1-%D8%B7%D9%88%D9%8A%D9%84%D8%A9-%D9%81%D9%8A-%D8%AD%D9%84%D8%A8-%D9%88%D8%A5%D8%AF%D9%84%D8%A8-%D9%88%D9%88%D8%B2%D8%A7%D8%B1%D8%A9" target="_blank" rel="noopener">الجزيرة نت · 26 تشرين الأول ↗</a>
+        </div>
+        <div class="ev-card warn">
+          <div class="ev-num">50 / 650<small>طلب</small></div>
+          <div class="ev-label">طلبات توريد نُفّذت من أصل المسجّل في حلب، وروابط تحميل تنتهي بعد 72 ساعة</div>
+          <a class="ev-src" href="https://www.almodon.com/economy/2026/10/26/%D8%A3%D8%B2%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D8%B2%D9%88%D8%AA-%D9%81%D9%8A-%D8%AD%D9%84%D8%A8-%D9%88%D8%A5%D8%AF%D9%84%D8%A8-%D8%B7%D9%88%D8%A7%D8%A8%D9%8A%D8%B1-%D9%88%D8%BA%D9%84%D8%A7%D8%A1-%D9%88%D8%B5%D9%87%D8%A7%D8%B1%D9%8A%D8%AC-%D8%B9%D8%A7%D9%84%D9%82%D8%A9" target="_blank" rel="noopener">المدن · 26 تشرين الأول ↗</a>
+        </div>
+      </div>
+      <div class="insight-strip">
+        <div class="insight-ico">!</div>
+        <div><b>الفجوة الذهبية:</b> المنفذ يعرف موعد العبور، والمنصة المعتمدة تعرف طلب التوريد، والكازية تعرف مستوى الخزان — <b>والسائق لا يعرف شيئاً</b>. «ممر» تجمع الأجزاء في <b>وعد واحد قابل للوفاء</b>. وفي الوقت نفسه تُوسَّع الساحات وتُفصل مسارات الشاحنات وتُمدّ ألياف ضوئية للتحول الرقمي: البنية تُبنى الآن، ومن يدخل أولاً يكتب بروتوكول التشغيل.</div>
+      </div>
+
+      <div class="section-head"><h2>ست ركائز تحوّل المحطة إلى منصة</h2><span>من الوعد إلى الشبكة</span></div>
+      <div class="pillars">
+        <div class="pillar"><div class="p-num">01</div><h3>الحجز باللوحة</h3><p>تذكرة QR مرتبطة برقم اللوحة واتجاه العبور وموعده. لا أدوار ورقية، ولا تكرار، ولا محسوبية.</p><span class="p-tag">يلغي الطابور</span></div>
+        <div class="pillar"><div class="p-num">02</div><h3>الوعد المضمون بالكمية</h3><p>محرك الحصص لا يبيع إلا ما يغطيه الخزان + التوريد المؤكد − هامش أمان. كمية جزئية أو نافذة بديلة بدل الرفض الصامت.</p><span class="p-tag">يمنع بيع الوهم</span></div>
+        <div class="pillar"><div class="p-num">03</div><h3>محفظة الأسطول</h3><p>حساب آجل، سقف ائتماني، فاتورة موحدة، نشرة سعر مؤقتة بختم زمني، وتسوية متعددة العملات لشركات النقل التركية والسورية.</p><span class="p-tag">الإيراد الحقيقي B2B</span></div>
+        <div class="pillar"><div class="p-num">04</div><h3>توقّع الطلب ↔ التوريد</h3><p>مواعيد العبور تتحول إلى توقّع طلب، ثم مسوّدة أمر توريد، ثم تتبّع الاعتماد والتحميل مع مؤقت صلاحية 72 ساعة.</p><span class="p-tag">يحلّ أصل الأزمة</span></div>
+        <div class="pillar"><div class="p-num">05</div><h3>تنسيق المسارات</h3><p>٤ مسارات شاحنات + ٢ سيارات، نداء تلقائي، تحقق QR عند المضخة، قياس خزانات، وتسوية وردية بسجل أحداث غير قابل للتعديل.</p><span class="p-tag">طاقة أعلى بلا حديد</span></div>
+        <div class="pillar accent"><div class="p-num">06</div><h3>«ممر OS» للشبكة</h3><p>نفس النواة تُشغَّل كمنتج مرخّص في باب الهوى والراعي وجرابلس… وبطاقة وقود واحدة صالحة على كل الممر.</p><span class="p-tag">هنا تتحول لمنصة</span></div>
+      </div>
+
+      <div class="section-head"><h2>الرحلة في ثلاث خطوات</h2><span>من بيانات الرحلة إلى فاتورة موحدة</span></div>
+      <div class="journey">
+        <div class="j-step"><div class="j-badge">١</div><h4>قبل الوصول</h4><p>الشركة تُدخل الرحلة واللوحة ← المنصة تحجز نافذة وقود متزامنة مع موعد العبور وتُثبّت السعر.</p></div>
+        <div class="j-arrow">←</div>
+        <div class="j-step"><div class="j-badge">٢</div><h4>خلف الكواليس</h4><p>توقّع الطلب يولّد أمر توريد، ويُتتبَّع الصهريج حتى التفريغ، ويُحدَّث «المتبقي اليوم» لحظة بلحظة.</p></div>
+        <div class="j-arrow">←</div>
+        <div class="j-step"><div class="j-badge">٣</div><h4>عند المسار</h4><p>السائق يمرّر QR، يعبّئ في دقائق، ويكمل إجراءاته ← فاتورة موحدة + بيانات تدفّق مجمّعة للهيئة.</p></div>
+      </div>
+
+      <div class="two-col">
+        <div class="panel">
+          <div class="panel-head"><h3>لماذا تفوز على البدائل؟</h3></div>
+          <table class="simple-table">
+            <tr><th>البديل</th><th>القصور</th></tr>
+            <tr><td>تطبيق «أقرب كازية»</td><td>معلومة فقط، لا يملك الكمية ولا المضخة</td></tr>
+            <tr><td>نظام رقم دور</td><td>ينظّم الانتظار ولا يلغيه</td></tr>
+            <tr><td>محفظة دفع فقط</td><td>يحلّ الدفع ولا يحلّ التوفّر</td></tr>
+            <tr><td>مضخات أكثر</td><td>رأسمال بطيء… والخزان فارغ أصلاً</td></tr>
+            <tr class="hl"><td><b>«ممر»</b></td><td><b>التوفّر + الوقت + الثقة + التمويل، ثم الشبكة</b></td></tr>
+          </table>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>الخندق التنافسي</h3></div>
+          <div class="moat">
+            <div class="moat-item"><span>◈</span><div><b>بيانات التدفّق</b><small>الربط بين موعد العبور والاستهلاك الفعلي</small></div></div>
+            <div class="moat-item"><span>◈</span><div><b>عقود الأساطيل</b><small>طلب متكرر متعاقد عليه لا مبيعات عابرة</small></div></div>
+            <div class="moat-item"><span>◈</span><div><b>تكامل التوريد</b><small>طبقة لا يملكها تطبيق ولا مضخة بمفردها</small></div></div>
+            <div class="moat-item"><span>◈</span><div><b>الأثر الشبكي</b><small>كل منفذ جديد يرفع قيمة البطاقة لكل الأساطيل</small></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-head"><h2>خارطة الطريق</h2><span>بوابات قرار، لا وعود زمنية فقط</span></div>
+      <div class="roadmap" id="roadmap"></div>
+
+      <div class="doc-links">
+        <a href="#" id="doc1">📄 الفكرة والجدوى كاملة</a>
+        <a href="#" id="doc2">🧩 المعمارية وخارطة التنفيذ التقنية</a>
+        <span>موجودة في مجلد <code>docs/</code> داخل المستودع</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ السائق -->
+    <section class="view" id="view-driver">
+      <div class="view-head">
+        <div><h2>بوابة السائق وشركات النقل</h2><p>احجز كمية مضمونة قبل أن تصل إلى المنفذ — باللوحة لا بالدور.</p></div>
+        <div class="view-head-badge">السعر مثبّت لحظة الحجز · نشرة <span id="bulletinNo">2026/41</span></div>
+      </div>
+
+      <div class="avail-grid" id="availGrid"></div>
+
+      <div class="driver-layout">
+        <div class="panel">
+          <div class="panel-head"><h3>حجز تعبئة جديد</h3><span class="hint">الكمية تُخصم فوراً من «المضمون المتاح»</span></div>
+          <form id="bookingForm" class="form">
+            <div class="form-row">
+              <label>رقم اللوحة <b>*</b><input name="plate" required placeholder="حلب ٤٤١٢٨ أو TR 34 AB 217" value="حلب ٧٧١٢٤"></label>
+              <label>اسم السائق<input name="driver" placeholder="أبو خالد" value="أبو خالد"></label>
+            </div>
+            <div class="form-row">
+              <label>شركة النقل / الأسطول
+                <select name="fleet_id" id="fleetSelect"></select>
+              </label>
+              <label>اتجاه الرحلة
+                <select name="direction"><option>ترانزيت</option><option>دخول</option><option>خروج</option></select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>نوع المحروقات
+                <select name="product_id" id="productSelect"></select>
+              </label>
+              <label>الكمية (لتر)<input name="liters" type="number" min="10" max="400" value="300" required></label>
+            </div>
+            <div class="form-row">
+              <label>قناة الحجز
+                <select name="channel"><option>تطبيق</option><option>واتساب</option><option>kiosk</option><option>USSD</option></select>
+              </label>
+              <label class="check-label"><input type="checkbox" name="priority"><span>نافذة أولوية مرتبطة بموعد العبور <small>+ 2,000 ل.س</small></span></label>
+            </div>
+            <div class="form-estimate" id="estimate"></div>
+            <button class="btn btn-primary btn-block" type="submit">تأكيد الحجز وإصدار تذكرة QR <span>←</span></button>
+            <div class="form-error" id="formError"></div>
+          </form>
+        </div>
+
+        <div class="panel ticket-panel" id="ticketPanel">
+          <div class="panel-head"><h3>تذكرة الحجز</h3><span class="hint">تُعرض عند البوابة أو تُطبع</span></div>
+          <div id="ticketBody" class="ticket-empty">
+            <div class="ticket-empty-ico">▦</div>
+            <p>لم يُصدر حجز بعد.<br><small>أكمل النموذج لتظهر التذكرة ورمز QR هنا.</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h3>حجوزات اليوم</h3><span class="hint">حالة مباشرة من لوحة المشغّل</span></div>
+        <div class="table-wrap"><table class="data-table" id="driverBookings"></table></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ المشغّل -->
+    <section class="view" id="view-operator">
+      <div class="view-head">
+        <div><h2>لوحة تشغيل المسارات</h2><p>كازية السلام · الوردية الصباحية · ٤ مسارات شاحنات + ٢ سيارات</p></div>
+        <div class="toolbar">
+          <button class="btn btn-primary btn-sm" id="callNextBtn">استدعاء التالي ←</button>
+          <button class="btn btn-outline btn-sm" id="tankerBtn">تسجيل وصول صهريج</button>
+          <button class="btn btn-outline btn-sm" id="orderBtn">توليد أمر توريد</button>
+        </div>
+      </div>
+
+      <div class="lane-grid" id="laneGrid"></div>
+
+      <div class="two-col op-cols">
+        <div class="panel">
+          <div class="panel-head"><h3>الطابور الذكي</h3><span class="hint" id="queueCount"></span></div>
+          <div class="table-wrap"><table class="data-table" id="queueTable"></table></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>الخزانات والتسعيرة</h3><span class="hint">تحديث النشرة يظهر فوراً للسائقين</span></div>
+          <div id="tankList"></div>
+        </div>
+      </div>
+
+      <div class="two-col op-cols">
+        <div class="panel">
+          <div class="panel-head"><h3>أوامر التوريد</h3><span class="hint">صلاحية رابط التحميل ٧٢ ساعة</span></div>
+          <div class="table-wrap"><table class="data-table" id="supplyTable"></table></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>سجل الأحداث</h3><span class="hint">append-only · للتسوية والتدقيق</span></div>
+          <div class="event-log" id="eventLog"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ الإدارة -->
+    <section class="view" id="view-admin">
+      <div class="view-head">
+        <div><h2>لوحة الإدارة والجدوى</h2><p>مؤشرات التشغيل + محاكي نموذج العمل (جميع الافتراضات قابلة للتعديل).</p></div>
+        <div class="view-head-badge">مقارنة بخط الأساس: ٢٤٠ دقيقة انتظار</div>
+      </div>
+
+      <div class="kpi-grid" id="kpiGrid"></div>
+
+      <div class="two-col admin-cols">
+        <div class="panel">
+          <div class="panel-head"><h3>الطلب بالساعة (ألف لتر)</h3><span class="hint">آخر ٨ ساعات · توضيحي</span></div>
+          <div id="hourlyChart" class="chart"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>مزيج المبيعات</h3><span class="hint">حسب المنتج</span></div>
+          <div id="mixChart" class="chart"></div>
+        </div>
+      </div>
+
+      <div class="panel simulator">
+        <div class="panel-head"><h3>محاكي الجدوى</h3><span class="hint">حرّك المؤشرات — الأرقام تتحدث فوراً</span></div>
+        <div class="sim-grid">
+          <div class="sim-controls" id="simControls"></div>
+          <div class="sim-results" id="simResults"></div>
+        </div>
+        <div class="sim-note">⚠️ أرقام تقديرية لأغراض العرض فقط، مبنية على ~191 شاحنة/يوم و~1,500 مركبة/يوم المستمدة من إحصاءات المنفذ. ليست توقعات مالية.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h3>عقود الأساطيل</h3><span class="hint">المحفظة والسقف الائتماني بالليرة السورية الجديدة</span></div>
+        <div class="table-wrap"><table class="data-table" id="fleetTable"></table></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>ممر MAMAR · نموذج أولي لكازية السلام في منفذ السلامة</span>
+    <span>الأسعار والكميات توضيحية · راجع <code>docs/</code> للمصادر والافتراضات</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="vendor/qrcode.js"></script>
+<script src="vendor/qrcode_UTF8.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
