@@ -1,0 +1,6 @@
+# runtime state
+app/data/*.db
+app/data/*.json
+__pycache__/
+*.pyc
+.DS_Store
